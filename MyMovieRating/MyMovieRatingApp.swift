@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct MyMovieRatingApp: App {
+    @StateObject var viewModel = MovieViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(movieViewModel: viewModel)
         }
     }
 }
