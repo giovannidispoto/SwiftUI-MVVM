@@ -26,8 +26,7 @@ struct ContentView: View {
                             NavigationLink(destination: MovieView(vm: movieViewModel, movie: $movie)){
                                 Text(movie.title)
                             }
-                        }
-                        
+                        }.onDelete(perform: movieViewModel.remove)
                     }
                 }else{
                     Text("Nothing to show here")

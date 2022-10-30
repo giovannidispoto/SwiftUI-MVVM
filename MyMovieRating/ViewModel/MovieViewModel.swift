@@ -30,6 +30,9 @@ class MovieViewModel : ObservableObject{
         
     }
     
+    func remove(at offsets: IndexSet){
+        self.movies.remove(at: offsets.first!)
+    }
     
     static func notEmpty() -> MovieViewModel{
         let vm = MovieViewModel()
