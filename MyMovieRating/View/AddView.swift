@@ -14,6 +14,7 @@ struct AddView: View {
     @State private var direction : String
     @State private var imageURL : String
     @State private var rating : Int
+    @State private var showingAlert: Bool = false
     
     init(isPresented: Binding<Bool>, vm: MovieViewModel) {
         _title = State(initialValue: "")
@@ -39,19 +40,25 @@ struct AddView: View {
             }
             Section{
                 Button(action: {
-                    vm.add(title: self.title, direction: self.direction, imageURL: self.imageURL, rating: self.rating + 1)
-                    
-                    self.title = ""
-                    self.direction = ""
-                    self.imageURL = ""
-                    self.rating = 0
-                    
-                    self.isPresented.toggle()
+                    if(self.title.isEmpty || self.direction.isEmpty || self.imageURL.isEmpty){
+                        self.showingAlert = true
+                    }else{
+                        vm.add(title: self.title, direction: self.direction, imageURL: self.imageURL, rating: self.rating + 1)
+                        
+                        self.title = ""
+                        self.direction = ""
+                        self.imageURL = ""
+                        self.rating = 0
+                        
+                        self.isPresented.toggle()
+                    }
                     
                     
                 })
                 {
                     Text("Insert")
+                }.alert("Some field are empty", isPresented: $showingAlert) {
+                    Button("OK", role: .cancel) { }
                 }
             }
         }

@@ -14,6 +14,7 @@ struct EditMovieView: View {
     @State private var direction:String
     @State private var imageURL:String
     @State private var rating:Int
+    @State private var showingAlert: Bool = false
     
     init(_ vm: MovieViewModel, _ movie: Binding<Movie>){
         self.vm = vm
@@ -39,9 +40,15 @@ struct EditMovieView: View {
         }.navigationTitle(Text("Edit Information"))
             .toolbar{
                 Button(action: {
-                    vm.update(for: movie, with: self.title, direction: self.direction, imageURL: self.imageURL, rating: self.rating + 1)
+                    if(self.title.isEmpty || self.direction.isEmpty || self.imageURL.isEmpty){
+                        self.showingAlert = true
+                    }else{
+                        vm.update(for: movie, with: self.title, direction: self.direction, imageURL: self.imageURL, rating: self.rating + 1)
+                    }
                 }){
                     Text("Done")
+                }.alert("Some field are empty", isPresented: $showingAlert) {
+                    Button("OK", role: .cancel) { }
                 }
             }
     }
