@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MovieView: View{
     @ObservedObject var vm : MovieViewModel
-    @Binding var movie: Movie
+    @State var movie: Movie
     
     
     var body : some View{
@@ -26,7 +26,7 @@ struct MovieView: View{
                 .font(.system(size:20))
         }.navigationTitle(Text(movie.title))
             .toolbar{
-                NavigationLink(destination: EditMovieView(vm, _movie)){
+                NavigationLink(destination: EditMovieView(vm, movie)){
                         Text("Edit")
                     }
             }
@@ -36,6 +36,6 @@ struct MovieView: View{
 
 struct MovieView_Preview: PreviewProvider{
     static var previews: some View {
-        MovieView(vm: MovieViewModel(), movie: .constant(Movie.sampleData[0]))
+        MovieView(vm: MovieViewModel(), movie: Movie.sampleData[0])
     }
 }

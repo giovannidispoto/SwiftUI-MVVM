@@ -21,9 +21,9 @@ struct ContentView: View {
             VStack{
                 if(movieViewModel.movies.isEmpty == false){
                     List{
-                        ForEach($movieViewModel.movies){$movie in
+                        ForEach(movieViewModel.movies){movie in
                             //Text(title)
-                            NavigationLink(destination: MovieView(vm: movieViewModel, movie: $movie)){
+                            NavigationLink(destination: MovieView(vm: movieViewModel, movie: movie)){
                                 Text(movie.title)
                             }
                         }.onDelete(perform: movieViewModel.remove)

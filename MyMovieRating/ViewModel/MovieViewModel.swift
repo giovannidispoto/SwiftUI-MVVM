@@ -8,25 +8,25 @@
 import Foundation
 
 class MovieViewModel : ObservableObject{
-     @Published var movies: [Movie]
+     @Published private(set) var movies: [Movie]
     
     init(){ //Initialize movies with sample data
         //movies = Movie.sampleData
-        movies = []
+        self.movies = []
     }
      //Update value of a Movie
     func update(for movie: Movie, with title: String, direction:String, imageURL:String, rating:Int){
         if let index = movies.firstIndex(where: {$0.id == movie.id}){
-            movies[index].title = title
-            movies[index].direction = direction
-            movies[index].imageURL = imageURL
-            movies[index].rating = rating
+            self.movies[index].title = title
+            self.movies[index].direction = direction
+            self.movies[index].imageURL = imageURL
+            self.movies[index].rating = rating
         }
     }
     
     func add(title: String, direction: String, imageURL: String, rating: Int){
         
-        movies.append(Movie(title:title, direction: direction, imageURL: imageURL, rating: rating))
+        self.movies.append(Movie(title:title, direction: direction, imageURL: imageURL, rating: rating))
         
     }
     

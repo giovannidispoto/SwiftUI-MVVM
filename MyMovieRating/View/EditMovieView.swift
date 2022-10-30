@@ -9,20 +9,20 @@ import SwiftUI
 
 struct EditMovieView: View {
     @ObservedObject var vm: MovieViewModel
-    @Binding var movie: Movie
+    @State var movie: Movie
     @State private var title: String
     @State private var direction:String
     @State private var imageURL:String
     @State private var rating:Int
     @State private var showingAlert: Bool = false
     
-    init(_ vm: MovieViewModel, _ movie: Binding<Movie>){
+    init(_ vm: MovieViewModel, _ movie: Movie){
         self.vm = vm
-        self._movie = movie
-        _title = State(initialValue:movie.wrappedValue.title)
-        _direction = State(initialValue: movie.wrappedValue.direction)
-        _imageURL = State(initialValue:movie.wrappedValue.imageURL)
-        _rating = State(initialValue: Int(movie.wrappedValue.rating) - 1)
+        _movie = State(initialValue:movie)
+        _title = State(initialValue:movie.title)
+        _direction = State(initialValue: movie.direction)
+        _imageURL = State(initialValue:movie.imageURL)
+        _rating = State(initialValue: Int(movie.rating) - 1)
     }
     
     var body: some View {
@@ -56,6 +56,6 @@ struct EditMovieView: View {
 
 struct EditMovieView_Previews: PreviewProvider {
     static var previews: some View {
-        EditMovieView(MovieViewModel(), .constant(Movie.sampleData[0]))
+        EditMovieView(MovieViewModel(), Movie.sampleData[0])
     }
 }
