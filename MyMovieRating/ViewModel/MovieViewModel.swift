@@ -8,7 +8,7 @@
 import Foundation
 
 class MovieViewModel : ObservableObject{
-    @Published var movies: [Movie]
+     @Published var movies: [Movie]
     
     init(){ //Initialize movies with sample data
         //movies = Movie.sampleData

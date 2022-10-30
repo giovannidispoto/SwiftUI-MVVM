@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2418DC19290EBEB000262583 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2418DC18290EBEB000262583 /* AddView.swift */; };
+		2418DC1C290EC96D00262583 /* MovieViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2418DC1B290EC96D00262583 /* MovieViewModelTests.swift */; };
 		24673D9A290986FD00786A6E /* EditMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24673D99290986FD00786A6E /* EditMovieView.swift */; };
 		24ADE8CD2909345B00430937 /* MyMovieRatingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ADE8CC2909345B00430937 /* MyMovieRatingApp.swift */; };
 		24ADE8CF2909345B00430937 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ADE8CE2909345B00430937 /* ContentView.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		2418DC18290EBEB000262583 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		2418DC1A290EC5E200262583 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2418DC1B290EC96D00262583 /* MovieViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModelTests.swift; sourceTree = "<group>"; };
 		24673D99290986FD00786A6E /* EditMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMovieView.swift; sourceTree = "<group>"; };
 		24ADE8C92909345B00430937 /* MyMovieRating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovieRating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24ADE8CC2909345B00430937 /* MyMovieRatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMovieRatingApp.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				24ADE8DD2909345C00430937 /* MyMovieRatingTests.swift */,
+				2418DC1B290EC96D00262583 /* MovieViewModelTests.swift */,
 			);
 			path = MyMovieRatingTests;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24ADE8DE2909345C00430937 /* MyMovieRatingTests.swift in Sources */,
+				2418DC1C290EC96D00262583 /* MovieViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
