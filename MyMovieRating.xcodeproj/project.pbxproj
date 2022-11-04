@@ -10,6 +10,8 @@
 		2418DC19290EBEB000262583 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2418DC18290EBEB000262583 /* AddView.swift */; };
 		2418DC1C290EC96D00262583 /* MovieViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2418DC1B290EC96D00262583 /* MovieViewModelTests.swift */; };
 		24673D9A290986FD00786A6E /* EditMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24673D99290986FD00786A6E /* EditMovieView.swift */; };
+		24A16DD529154F8F004F410F /* DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A16DD429154F8F004F410F /* DataManagerProtocol.swift */; };
+		24A16DD82915508E004F410F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A16DD72915508E004F410F /* DataManager.swift */; };
 		24ADE8CD2909345B00430937 /* MyMovieRatingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ADE8CC2909345B00430937 /* MyMovieRatingApp.swift */; };
 		24ADE8CF2909345B00430937 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ADE8CE2909345B00430937 /* ContentView.swift */; };
 		24ADE8D12909345C00430937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24ADE8D02909345C00430937 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		2418DC1A290EC5E200262583 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2418DC1B290EC96D00262583 /* MovieViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModelTests.swift; sourceTree = "<group>"; };
 		24673D99290986FD00786A6E /* EditMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMovieView.swift; sourceTree = "<group>"; };
+		24A16DD429154F8F004F410F /* DataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerProtocol.swift; sourceTree = "<group>"; };
+		24A16DD72915508E004F410F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		24ADE8C92909345B00430937 /* MyMovieRating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovieRating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24ADE8CC2909345B00430937 /* MyMovieRatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMovieRatingApp.swift; sourceTree = "<group>"; };
 		24ADE8CE2909345B00430937 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +99,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		24A16DD329154F77004F410F /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				24A16DD429154F8F004F410F /* DataManagerProtocol.swift */,
+				24A16DD72915508E004F410F /* DataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		24ADE8C02909345B00430937 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +132,7 @@
 		24ADE8CB2909345B00430937 /* MyMovieRating */ = {
 			isa = PBXGroup;
 			children = (
+				24A16DD329154F77004F410F /* DataManager */,
 				24ADE8F62909346400430937 /* Model */,
 				24ADE8CC2909345B00430937 /* MyMovieRatingApp.swift */,
 				24ADE8FB2909395A00430937 /* ViewModel */,
@@ -302,11 +316,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2418DC19290EBEB000262583 /* AddView.swift in Sources */,
+				24A16DD529154F8F004F410F /* DataManagerProtocol.swift in Sources */,
 				24ADE8CF2909345B00430937 /* ContentView.swift in Sources */,
 				24ADE8FD2909398100430937 /* MovieViewModel.swift in Sources */,
 				24ADE8FA290937CA00430937 /* MovieView.swift in Sources */,
 				24673D9A290986FD00786A6E /* EditMovieView.swift in Sources */,
 				24ADE8CD2909345B00430937 /* MyMovieRatingApp.swift in Sources */,
+				24A16DD82915508E004F410F /* DataManager.swift in Sources */,
 				24ADE8F82909348600430937 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

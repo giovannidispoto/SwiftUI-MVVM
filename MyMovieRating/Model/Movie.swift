@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Movie: Identifiable{
+struct Movie: Identifiable, Equatable{
     
     let id: UUID //Used in order to identify the object
     var title: String

@@ -40,8 +40,9 @@ struct ContentView: View {
                         Image(systemName: "plus")
                     }
                 }
-        }
-        .sheet(isPresented: $isPresented, onDismiss: {}){
+        }.onAppear(perform: movieViewModel.fetchAllMovies)
+        
+            .sheet(isPresented: $isPresented, onDismiss: {}){
             AddView(isPresented: $isPresented, vm: movieViewModel)
         }
             

@@ -8,30 +8,35 @@
 import Foundation
 
 class MovieViewModel : ObservableObject{
-     @Published private(set) var movies: [Movie]
+    @Published
+    private(set) var movies: [Movie] = []
     
-    init(){ //Initialize movies with sample data
+    private var dataManager: DataManager
+    
+    init(dataManager: DataManager = DataManager.shared){ //Initialize movies with sample data
         //movies = Movie.sampleData
-        self.movies = []
+        self.dataManager = dataManager
+        
     }
      //Update value of a Movie
     func update(for movie: Movie, with title: String, direction:String, imageURL:String, rating:Int){
-        if let index = movies.firstIndex(where: {$0.id == movie.id}){
-            self.movies[index].title = title
-            self.movies[index].direction = direction
-            self.movies[index].imageURL = imageURL
-            self.movies[index].rating = rating
-        }
+        dataManager.update(movie: movie, title: title, direction: direction, imageURL: imageURL, rating: rating)
+        fetchAllMovies()
+    }
+    
+    func fetchAllMovies(){
+        movies = dataManager.fetchAllMovies()
     }
     
     func add(title: String, direction: String, imageURL: String, rating: Int){
-        
-        self.movies.append(Movie(title:title, direction: direction, imageURL: imageURL, rating: rating))
-        
+        //self.movies.append(Movie(title:title, direction: direction, imageURL: imageURL, rating: rating))
+        dataManager.add(title:title, direction: direction, imageURL: imageURL, rating: rating)
+        fetchAllMovies()
     }
     
     func remove(at offsets: IndexSet){
-        self.movies.remove(at: offsets.first!)
+        dataManager.remove(at: offsets)
+        fetchAllMovies()
     }
     
     static func notEmpty() -> MovieViewModel{
