@@ -10,8 +10,8 @@ import Foundation
 protocol DataManagerProtocol{
     
     func fetchAllMovies() -> [Movie]
-    func add(title: String, direction: String, imageURL: String, rating: Int)
-    func remove(at: IndexSet)
-    func update(movie: Movie, title: String, direction: String, imageURL: String, rating: Int )
+    func add(title: String, direction: String, imageURL: String, rating: Int16)
+    func remove(movie: Movie)
+    func update(movie: Movie, title: String, direction: String, imageURL: String, rating: Int16 )
     
 }

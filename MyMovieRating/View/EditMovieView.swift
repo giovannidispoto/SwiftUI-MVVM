@@ -43,7 +43,7 @@ struct EditMovieView: View {
                     if(self.title.isEmpty || self.direction.isEmpty || self.imageURL.isEmpty){
                         self.showingAlert = true
                     }else{
-                        vm.update(for: movie, with: self.title, direction: self.direction, imageURL: self.imageURL, rating: self.rating + 1)
+                        vm.update(for: movie, with: self.title, direction: self.direction, imageURL: self.imageURL, rating: Int16(self.rating + 1))
                     }
                 }){
                     Text("Done")

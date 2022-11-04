@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240F5D5C291564E00020479C /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240F5D5B291564E00020479C /* CoreDataHelper.swift */; };
+		240F5D5F291566020020479C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 240F5D5D291566020020479C /* Model.xcdatamodeld */; };
+		240F5D61291567B60020479C /* MovieMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240F5D60291567B60020479C /* MovieMO.swift */; };
 		2418DC19290EBEB000262583 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2418DC18290EBEB000262583 /* AddView.swift */; };
 		2418DC1C290EC96D00262583 /* MovieViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2418DC1B290EC96D00262583 /* MovieViewModelTests.swift */; };
+		2467029829156EB6003E97C3 /* DBHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2467029729156EB6003E97C3 /* DBHelper.framework */; };
+		2467029929156EB6003E97C3 /* DBHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2467029729156EB6003E97C3 /* DBHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24673D9A290986FD00786A6E /* EditMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24673D99290986FD00786A6E /* EditMovieView.swift */; };
 		24A16DD529154F8F004F410F /* DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A16DD429154F8F004F410F /* DataManagerProtocol.swift */; };
 		24A16DD82915508E004F410F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A16DD72915508E004F410F /* DataManager.swift */; };
@@ -41,10 +46,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2467029A29156EB6003E97C3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2467029929156EB6003E97C3 /* DBHelper.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		240F5D5B291564E00020479C /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		240F5D5E291566020020479C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		240F5D60291567B60020479C /* MovieMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieMO.swift; sourceTree = "<group>"; };
 		2418DC18290EBEB000262583 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		2418DC1A290EC5E200262583 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2418DC1B290EC96D00262583 /* MovieViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModelTests.swift; sourceTree = "<group>"; };
+		2467029729156EB6003E97C3 /* DBHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DBHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24673D99290986FD00786A6E /* EditMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMovieView.swift; sourceTree = "<group>"; };
 		24A16DD429154F8F004F410F /* DataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerProtocol.swift; sourceTree = "<group>"; };
 		24A16DD72915508E004F410F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -68,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2467029829156EB6003E97C3 /* DBHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +112,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		240F5D5A291564C20020479C /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				240F5D60291567B60020479C /* MovieMO.swift */,
+				240F5D5B291564E00020479C /* CoreDataHelper.swift */,
+				240F5D5D291566020020479C /* Model.xcdatamodeld */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		2418DC17290E92F100262583 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +131,14 @@
 				2418DC18290EBEB000262583 /* AddView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2467029629156EB6003E97C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2467029729156EB6003E97C3 /* DBHelper.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		24A16DD329154F77004F410F /* DataManager */ = {
@@ -116,6 +158,7 @@
 				24ADE8DC2909345C00430937 /* MyMovieRatingTests */,
 				24ADE8E62909345C00430937 /* MyMovieRatingUITests */,
 				24ADE8CA2909345B00430937 /* Products */,
+				2467029629156EB6003E97C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +175,7 @@
 		24ADE8CB2909345B00430937 /* MyMovieRating */ = {
 			isa = PBXGroup;
 			children = (
+				240F5D5A291564C20020479C /* Persistence */,
 				24A16DD329154F77004F410F /* DataManager */,
 				24ADE8F62909346400430937 /* Model */,
 				24ADE8CC2909345B00430937 /* MyMovieRatingApp.swift */,
@@ -195,6 +239,7 @@
 				24ADE8C52909345B00430937 /* Sources */,
 				24ADE8C62909345B00430937 /* Frameworks */,
 				24ADE8C72909345B00430937 /* Resources */,
+				2467029A29156EB6003E97C3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -315,14 +360,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				240F5D5C291564E00020479C /* CoreDataHelper.swift in Sources */,
 				2418DC19290EBEB000262583 /* AddView.swift in Sources */,
 				24A16DD529154F8F004F410F /* DataManagerProtocol.swift in Sources */,
 				24ADE8CF2909345B00430937 /* ContentView.swift in Sources */,
+				240F5D61291567B60020479C /* MovieMO.swift in Sources */,
 				24ADE8FD2909398100430937 /* MovieViewModel.swift in Sources */,
 				24ADE8FA290937CA00430937 /* MovieView.swift in Sources */,
 				24673D9A290986FD00786A6E /* EditMovieView.swift in Sources */,
 				24ADE8CD2909345B00430937 /* MyMovieRatingApp.swift in Sources */,
 				24A16DD82915508E004F410F /* DataManager.swift in Sources */,
+				240F5D5F291566020020479C /* Model.xcdatamodeld in Sources */,
 				24ADE8F82909348600430937 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +539,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -520,6 +569,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -645,6 +695,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		240F5D5D291566020020479C /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				240F5D5E291566020020479C /* Model.xcdatamodel */,
+			);
+			currentVersion = 240F5D5E291566020020479C /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 24ADE8C12909345B00430937 /* Project object */;
 }

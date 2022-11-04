@@ -13,14 +13,14 @@ struct AddView: View {
     @State private var title: String
     @State private var direction : String
     @State private var imageURL : String
-    @State private var rating : Int
+    @State private var rating : Int16
     @State private var showingAlert: Bool = false
     
     init(isPresented: Binding<Bool>, vm: MovieViewModel) {
         _title = State(initialValue: "")
         _direction = State(initialValue: "")
         _imageURL = State(initialValue: "")
-        _rating = State(initialValue: 0)
+        _rating = State(initialValue: 1)
         _vm = ObservedObject(wrappedValue: vm)
         self._isPresented = isPresented
     }

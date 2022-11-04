@@ -10,7 +10,6 @@ import Foundation
 class MovieViewModel : ObservableObject{
     @Published
     private(set) var movies: [Movie] = []
-    
     private var dataManager: DataManager
     
     init(dataManager: DataManager = DataManager.shared){ //Initialize movies with sample data
@@ -19,7 +18,8 @@ class MovieViewModel : ObservableObject{
         
     }
      //Update value of a Movie
-    func update(for movie: Movie, with title: String, direction:String, imageURL:String, rating:Int){
+    func update(for movie: Movie, with title: String, direction:String, imageURL:String, rating:Int16){
+        
         dataManager.update(movie: movie, title: title, direction: direction, imageURL: imageURL, rating: rating)
         fetchAllMovies()
     }
@@ -28,14 +28,14 @@ class MovieViewModel : ObservableObject{
         movies = dataManager.fetchAllMovies()
     }
     
-    func add(title: String, direction: String, imageURL: String, rating: Int){
+    func add(title: String, direction: String, imageURL: String, rating: Int16){
         //self.movies.append(Movie(title:title, direction: direction, imageURL: imageURL, rating: rating))
         dataManager.add(title:title, direction: direction, imageURL: imageURL, rating: rating)
         fetchAllMovies()
     }
     
     func remove(at offsets: IndexSet){
-        dataManager.remove(at: offsets)
+        dataManager.remove(movie: movies[offsets.first!])
         fetchAllMovies()
     }
     

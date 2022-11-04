@@ -13,10 +13,10 @@ struct Movie: Identifiable, Equatable{
     var title: String
     var direction: String
     var imageURL: String
-    var rating: Int
+    var rating: Int16
     
     //Initialize
-    init(id : UUID = UUID(), title: String, direction:String, imageURL: String, rating: Int){
+    init(id : UUID = UUID(), title: String, direction:String, imageURL: String, rating: Int16){
         self.id = id
         self.title = title
         self.direction = direction
