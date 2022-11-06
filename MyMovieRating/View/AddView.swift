@@ -13,7 +13,7 @@ struct AddView: View {
     @State private var title: String
     @State private var direction : String
     @State private var imageURL : String
-    @State private var rating : Int16
+    @State private var rating : Int
     @State private var showingAlert: Bool = false
     
     init(isPresented: Binding<Bool>, vm: MovieViewModel) {
@@ -43,7 +43,7 @@ struct AddView: View {
                     if(self.title.isEmpty || self.direction.isEmpty || self.imageURL.isEmpty){
                         self.showingAlert = true
                     }else{
-                        vm.add(title: self.title, direction: self.direction, imageURL: self.imageURL, rating: self.rating + 1)
+                        vm.add(title: self.title, direction: self.direction, imageURL: self.imageURL, rating: Int16(self.rating + 1))
                         
                         self.title = ""
                         self.direction = ""

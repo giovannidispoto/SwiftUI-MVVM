@@ -73,7 +73,6 @@ class DataManager: DataManagerProtocol{
         
     }
     
-    
     func update(movie: Movie, title: String, direction: String, imageURL: String, rating: Int16) {
         guard let movie = getMovieMO(for: movie) else {return}
         movie.title = title
